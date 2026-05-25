@@ -1,0 +1,71 @@
+.fp-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 1200;
+}
+
+.fp-popup {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  background: var(--card-bg, #0f1724);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  color: var(--text-color, #e6eef8);
+}
+
+.fp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.fp-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.fp-skip {
+  background: transparent;
+  border: none;
+  color: var(--muted, #9fb3c8);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.fp-body {
+  text-align: center;
+}
+
+.fp-question {
+  margin: 6px 0 12px 0;
+  color: var(--muted, #cfe3f0);
+}
+
+.fp-stars {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.fp-star {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted, #7695a6);
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.fp-star.filled {
+  color: #f6c342;
+}
+
+.fp-star:focus {
+  outline: 2px solid rgba(246,195,66,0.25);
+}

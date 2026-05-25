@@ -16,10 +16,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/csaxis', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/csaxis')
+.then(() => {
   console.log('MongoDB connected');
 }).catch((err) => {
   console.log('MongoDB connection error:', err);

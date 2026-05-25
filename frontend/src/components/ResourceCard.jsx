@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowBigUp, ArrowBigDown, ExternalLink, MessageSquare } from 'lucide-react';
+import FeedbackPopup from './FeedbackPopup';
 import { getYoutubeThumbnail, fetchPlaylistThumbnail } from '../utils/youtubeViewer';
 import './ResourceCard.css';
 
@@ -37,6 +38,19 @@ const ResourceCard = ({ resource, viewMode, onUpvote, onDownvote }) => {
     }
     if (type === 'up') onUpvote(resource.id);
     else onDownvote(resource.id);
+  };
+
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [targetUrl, setTargetUrl] = useState(null);
+
+  const openFeedback = (url) => {
+    setTargetUrl(url);
+    setShowFeedback(true);
+  };
+
+  const closeFeedback = () => {
+    setShowFeedback(false);
+    setTargetUrl(null);
   };
 
   return (
@@ -79,14 +93,17 @@ const ResourceCard = ({ resource, viewMode, onUpvote, onDownvote }) => {
         )}
 
         <div className="resource-actions">
-          <a href={resource.url} target="_blank" rel="noopener noreferrer" className="action-btn">
+          <button onClick={() => openFeedback(resource.url)} className="action-btn">
             <ExternalLink size={16} /> Open Resource
-          </a>
+          </button>
           <button className="btn action-btn">
             <MessageSquare size={16} /> {resource.comments} Comments
           </button>
         </div>
       </div>
+      {showFeedback && (
+        <FeedbackPopup url={targetUrl} onClose={closeFeedback} />
+      )}
     </div>
   );
 };

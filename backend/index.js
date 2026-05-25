@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-// Load environment variables from the custom file
-dotenv.config({ path: './routes/mongo.env' });
+// Load environment variables
+dotenv.config();
 
 const authRoutes = require('./routes/auth');
 
