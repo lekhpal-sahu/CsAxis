@@ -1,0 +1,78 @@
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-dropdown: rgba(22, 27, 34, 0.7);
+  --surface-hover: #21262d;
+  --accent: #00e5ff;
+  --accent-hover: #33eaff;
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
+  --border: #30363d;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body.light-mode {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --surface-dropdown: rgba(255, 255, 255, 0.85);
+  --surface-hover: #f3f4f6;
+  --accent: #0093a3; /* Adapted cyan for better contrast text readability */
+  --accent-hover: #006f7d;
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --border: #d0d7de;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--surface-dropdown);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: var(--sans);
+  transition: all 0.2s ease;
+}
+
+.max-w-7xl {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}

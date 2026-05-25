@@ -1,0 +1,9 @@
+.footer-container {
+  margin-top: auto;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background: rgba(13, 17, 23, 0.8);
+  border-top: 1px solid var(--border);
+}

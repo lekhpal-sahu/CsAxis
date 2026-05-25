@@ -1,0 +1,154 @@
+.resource-card {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.resource-card:hover {
+  border-color: var(--accent);
+}
+
+.vote-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 50px;
+}
+
+.vote-btn {
+  padding: 0.25rem;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.vote-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vote-btn.upvoted {
+  color: var(--accent);
+}
+
+.vote-btn.downvoted {
+  color: #ff4500; /* standard reddit downvote color, since pink/purple isn't allowed but need a contrasting color for negative, orange/red is good */
+}
+
+.vote-count {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.vote-count.upvoted {
+  color: var(--accent);
+}
+
+.vote-count.downvoted {
+  color: #ff4500;
+}
+
+.resource-content {
+  padding: 0.75rem 1rem;
+  flex: 1;
+}
+
+.resource-meta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.resource-tag {
+  font-weight: 600;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: 12px;
+}
+
+.resource-author, .resource-time {
+  margin: 0;
+}
+
+.resource-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.resource-thumbnail {
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%; /* Can adjust based on preference */
+}
+
+.resource-thumbnail img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.resource-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+/* List container grid view overrides */
+.resource-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Card overrides for Grid Mode */
+.resource-card.grid-mode {
+  flex-direction: column-reverse;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.resource-card.grid-mode .vote-sidebar {
+  flex-direction: row;
+  min-width: unset;
+  padding: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-top: 1px solid var(--border);
+}
+
+.resource-card.grid-mode .resource-thumbnail img {
+  max-height: 180px;
+}
+
